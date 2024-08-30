@@ -5,11 +5,13 @@ const userRoutes = require('./src/routes/ventaRoutes');
 const app = express();
 const port = 3001;
 
+
+
 // Middleware para parsear JSON
 app.use(bodyParser.json());
 
 // Rutas
-app.use('/api/users', userRoutes);
+app.use('/api/ventas', userRoutes);
 
 // Iniciar el servidor
 app.listen(port, () => {

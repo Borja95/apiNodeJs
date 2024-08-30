@@ -1,10 +1,19 @@
 const db = require('../config/dbConfig');
 
-class User {
+class Venta {
     getAllVentas(callback) {
-        const sql = 'SELECT * FROM ventas limit 100';
+        const sql = 'SELECT * FROM ventas';
         db.query(sql, callback);
+
+        console.log(db);
     }
+
+    getVentaById(id, callback){
+        const sql = 'SELECT * FROM ventas WHERE idVenta = ?';
+        db.query(sql, [id], callback);
+    }
+
+
 
     /*
     createUser(name, email, callback) {
@@ -13,4 +22,4 @@ class User {
     }*/
 }
 
-module.exports = new User();
+module.exports = new Venta();
